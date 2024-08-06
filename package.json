@@ -4,7 +4,8 @@
   "description": "A web app that allows for users to hop on video call with their friends and team",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Anakor Joshua",
   "license": "ISC",
