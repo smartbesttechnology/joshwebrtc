@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+//using the env
+const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
 const server = require("http").Server(app);
 
 const socketS = require("socket.io");
@@ -18,6 +21,7 @@ const peerServer = ExpressPeerServer(server, {
   debug: true,
 });
 const { v4: uuidV4 } = require("uuid");
+const { PORT } = require("../utils");
 
 app.use("/peerjs", peerServer);
 
@@ -67,7 +71,7 @@ io.on("connection", (socket) => {
   });
 });
 
-const port = process.argv[3] || 3030;
+const port = PORT || 5000;
 server.listen(port, () => {
   console.log(`connected on port ${port}`);
 });
