@@ -1,5 +1,5 @@
 let Peer = window.Peer;
-const socket = io("/http://localhost:3030/");
+const socket = io("/");
 
 const videoGrid = document.getElementById("video-grid");
 
